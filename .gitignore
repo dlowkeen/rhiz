@@ -15,7 +15,6 @@
 .env.dev
 .env.test.local
 .env.prod
-dev.js
 .env
 heroku
 heroku.pub
