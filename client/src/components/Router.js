@@ -12,6 +12,7 @@ import ConsumerSignUp from './register/consumerSignUp/ConsumerSignUp';
 import BusinessSignUp from './register/businessSignUp/BusinessSignUp';
 import Login from './register/login/Login';
 import Team from './team/Team';
+import BusinessProfile from './BusinessProfile/BusinessProfile'
 
 class Router extends Component {
   componentDidMount() {
@@ -31,6 +32,7 @@ class Router extends Component {
           <Route path="/business" component={BusinessSignUp} />
           <Route path="/login" component={Login} />
           <Route path="/team" component={Team} />
+          <Route path="/business_profile" component={BusinessProfile} />
           <Footer />
         </div>
       </BrowserRouter>
