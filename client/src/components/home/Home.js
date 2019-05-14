@@ -43,10 +43,7 @@ class Home extends Component {
     // use spread to prevent mutations
     let { featuredLandscaping, featuredInteriorDesign, searchFor } = this.state;
     const match =  new RegExp(escapeRegExp(searchFor), 'i');
-    searchFor ?
-    featuredLandscaping = featuredLandscaping.filter((fls) => match.test(fls.name))
-    :
-    featuredLandscaping
+    featuredLandscaping = searchFor ? featuredLandscaping.filter((fls) => match.test(fls.name)) : featuredLandscaping
     return <div>
         <ParallaxImage
           bgImage={landscape1}
