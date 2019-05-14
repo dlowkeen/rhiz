@@ -77,13 +77,13 @@ export const worksWith = [
 ];
 
 export const instaPics = [
-  { pic: insta1},
-  { pic: insta2},
-  { pic: insta3},
-  { pic: insta4},
-  { pic: insta5},
-  { pic: insta6},
-  { pic: insta7},
-  { pic: insta8},
-  { pic: insta9},
+  { pic: insta1 },
+  { pic: insta2 },
+  { pic: insta3 },
+  { pic: insta4 },
+  { pic: insta5 },
+  { pic: insta6 },
+  { pic: insta7 },
+  { pic: insta8 },
+  { pic: insta9 },
 ];
