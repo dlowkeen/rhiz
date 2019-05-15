@@ -15,12 +15,18 @@ export const Row = styled.div`
 `;
 
 export const Dollar = styled.div`
-  margin-right: 1%;
-  color: ${props => `${props.color}`};
+  margin-right: 15%;
+  color: ${props => props.color ? '#D3D3D3' : 'black'};
   font-weight: bold;
 `;
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+export const Tag = styled.div`
+  font-size: 16px;
+  color: #43b02a;
+  margin-right: 3%;
 `;

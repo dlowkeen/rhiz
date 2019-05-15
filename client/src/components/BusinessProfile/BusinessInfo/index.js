@@ -33,7 +33,9 @@ export const business = {
   address: '1351 3rd St., Santa Monica, 90291',
   reviewCount: 185,
   banner: landscapeBannerPic,
-  profile: busProfilePic
+  profile: busProfilePic,
+  mutualFriends: 7,
+  totalFriends: 1856
 };
 
 export const reviews = [

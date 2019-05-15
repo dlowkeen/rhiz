@@ -1,16 +1,18 @@
 // packages
 import React, { useState, useEffect } from 'react';
 import { connect  } from 'react-redux';
+import { SocialIcon } from 'react-social-icons';
 
 // components
 import Sidebar from './subcomponents/Sidebar';
 // import Reviews from './subcomponents/Reviews';
 // import BusinessMapContainer from './subcomponents/BusinessMapContainer'
-import { Container, Row, Dollar } from './BusinessProfileStyles/index';
+import { Container, Row, Dollar, Tag } from './BusinessProfileStyles/index';
 // import ParallaxImage from '../common/ParallaxImage';
 
 // assets
 import { business, reviews, worksWith, instaPics } from './BusinessInfo';
+import dollarSign from './images/dollar-sign-solid.svg'
 
 
 const BusinessProfile = () => {
@@ -20,8 +22,8 @@ const BusinessProfile = () => {
   const [review3, readMore3] = useState(false);
   const [review4, readMore4] = useState(false);
   const [urgency, setUrgency] = useState('Just Curious');
-  const [mutualFriends, setMutual] = useState(7);
-  const [totalFriends, setTotal] = useState(1856);
+  const [mutualFriends, setMutual] = useState(0);
+  const [totalFriends, setTotal] = useState(0);
   const [businessName, setBusinessName] = useState('');
   const [businessDescription, setDescription] = useState('');
   const [contact, setContact] = useState({});
@@ -42,7 +44,9 @@ const BusinessProfile = () => {
 
   useEffect(() => {
     // get info and set state with it (will eventually be requesting for business info from db)
-    const { name, description, tags, price, rhizScore, contact, address, reviewCount, about, banner, profile } = business;
+    const { 
+      name, description, tags, price, rhizScore, contact, address, reviewCount, about, banner, profile, mutualFriends, totalFriends 
+    } = business;
     setBusinessName(name);
     setDescription(description);
     setContact(contact);
@@ -58,23 +62,25 @@ const BusinessProfile = () => {
     setWorksWith(worksWith);
     setInsta(instaPics);
     setReviews(reviews);
+    setMutual(mutualFriends);
+    setTotal(totalFriends);
   });
 
   //methods
 
   // showing the price point
   const renderDollarSigns = () => {
-    const faintStyle = { color: '#D3D3D3' };
+    
     switch (price) {
       case 4: 
         return ( <Row><Dollar>$</Dollar><Dollar>$</Dollar><Dollar>$</Dollar><Dollar>$</Dollar></Row> )
       case 3:
         console.log('bingo')
-        return ( <Row><Dollar>$</Dollar><Dollar>$</Dollar><Dollar>$</Dollar><Dollar color={faintStyle}>$</Dollar></Row> )
+        return ( <Row><Dollar>$</Dollar><Dollar>$</Dollar><Dollar>$</Dollar><Dollar color>$</Dollar></Row> )
       case 2:
-        return ( <Row><Dollar>$</Dollar><Dollar>$</Dollar><Dollar color={faintStyle}>$</Dollar><Dollar color={faintStyle}>$</Dollar></Row> )
+        return ( <Row><Dollar>$</Dollar><Dollar>$</Dollar><Dollar color>$</Dollar><Dollar color>$</Dollar></Row> )
       case 1:
-        return ( <Row><Dollar>$</Dollar><Dollar color={faintStyle}>$</Dollar><Dollar color={faintStyle}>$</Dollar><Dollar color={faintStyle}>$</Dollar></Row> )
+        return ( <Row><Dollar>$</Dollar><Dollar color>$</Dollar><Dollar color>$</Dollar><Dollar color>$</Dollar></Row> )
     };
   };
 
@@ -84,7 +90,7 @@ const BusinessProfile = () => {
     setUrgency(status);
   };
 
-  const upadeStartDate = (date) => {
+  const updateStartDate = (date) => {
     setDate(date);
   };
 
@@ -109,8 +115,6 @@ const BusinessProfile = () => {
     // setVisReviewCount(newVisReviewCount);
   };
 
-  
-  
   return (
     <div>
       {/* <ParallaxImage
@@ -124,17 +128,27 @@ const BusinessProfile = () => {
         style={{ marginBottom: '25%'}}
         headerStyle='20%'
       /> */}
-      <Row>
-        <Container>
-          {renderDollarSigns()}
+      <Row style={{ marginBottom: '5%' }}>
+        <Container style={{width: '67%', marginLeft: '5%' }}>
+          <Row style={{ fontSize: '16px', marginBottom: '1%' }}>
+            <SocialIcon network="facebook" style={{ marginRight: '1%', width: 23, height: 23, marginTop: '-0.2%' }}/>
+            {mutualFriends} of your Facebook friends and {totalFriends} people have liked Blades of Glory 
+          </Row>
+          <Row>
+            {tags.map((tag) => <Tag>{tag}</Tag>)}
+            {renderDollarSigns()}
+          </Row>
         </Container>
-        <Sidebar 
-          score={score} 
-          urgency={urgency} 
-          instaPics={instaPic} 
-          changeUrgency={updateUrgency} 
-          sendRequest={sendRequest}
-        />
+        <Container style={{ width: '33%' }}>
+          <Sidebar 
+            score={score} 
+            urgency={urgency} 
+            instaPics={instaPic} 
+            changeUrgency={updateUrgency} 
+            sendRequest={sendRequest}
+            getDate={updateStartDate}
+          />
+        </Container>
       </Row>
     
     </div>
