@@ -38,7 +38,7 @@ const BusinessProfile = () => {
   const [workWith, setWorksWith] = useState([]);
   const [instaPic, setInsta] = useState([]);
   const [userReviews, setReviews] = useState([]);
-  const [startDate, setDate] = useState('');
+  const [startDate, setDate] = useState(new Date());
   const [requestStatus, setReqStatus] = useState(false);
   const [visibleReviewCount, setVisReviewCount] = useState(4);
 
@@ -70,7 +70,6 @@ const BusinessProfile = () => {
 
   // showing the price point
   const renderDollarSigns = () => {
-    
     switch (price) {
       case 4: 
         return ( <Row><Dollar>$</Dollar><Dollar>$</Dollar><Dollar>$</Dollar><Dollar>$</Dollar></Row> )
@@ -91,6 +90,7 @@ const BusinessProfile = () => {
   };
 
   const updateStartDate = (date) => {
+    console.log('Date Chosen: ', date)
     setDate(date);
   };
 
@@ -135,8 +135,12 @@ const BusinessProfile = () => {
             {mutualFriends} of your Facebook friends and {totalFriends} people have liked Blades of Glory 
           </Row>
           <Row>
-            {tags.map((tag) => <Tag>{tag}</Tag>)}
-            {renderDollarSigns()}
+            <Row style={{ width: '60%' }}>
+              {tags.map((tag) => <Tag>{tag}</Tag>)}
+            </Row>
+            <Row style={{ width: '40%', marginLeft: '-15%' }}>
+              {renderDollarSigns()}
+            </Row>
           </Row>
         </Container>
         <Container style={{ width: '33%' }}>
@@ -147,6 +151,7 @@ const BusinessProfile = () => {
             changeUrgency={updateUrgency} 
             sendRequest={sendRequest}
             getDate={updateStartDate}
+            date={startDate}
           />
         </Container>
       </Row>

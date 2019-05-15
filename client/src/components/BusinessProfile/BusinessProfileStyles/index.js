@@ -15,7 +15,7 @@ export const Row = styled.div`
 `;
 
 export const Dollar = styled.div`
-  margin-right: 15%;
+  margin-right: 35%;
   color: ${props => props.color ? '#D3D3D3' : 'black'};
   font-weight: bold;
 `;
