@@ -28,7 +28,7 @@ export const business = {
   price: 3,
   rhizScore: 90,
   contact: {
-    name: 'Daisy Buchanan',
+    name: 'Alessandra McLane',
     title: 'Business Owner',
     pic: owner
   },

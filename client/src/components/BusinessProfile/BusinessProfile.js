@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { connect  } from 'react-redux';
 import { SocialIcon } from 'react-social-icons';
+import commaNumber from 'comma-number';
+import { Icon } from 'semantic-ui-react';
 
 // components
 import Sidebar from './subcomponents/Sidebar';
@@ -73,21 +75,41 @@ const BusinessProfile = () => {
   const renderDollarSigns = () => {
     switch (price) {
       case 4: 
-        return ( <Row><Dollar>$</Dollar><Dollar>$</Dollar><Dollar>$</Dollar><Dollar>$</Dollar></Row> )
+        return ( <Row>
+          <Dollar><Icon name='dollar sign' color='black'/></Dollar>
+          <Dollar><Icon name='dollar sign' color='black'/></Dollar>
+          <Dollar><Icon name='dollar sign' color='black'/></Dollar>
+          <Dollar><Icon name='dollar sign' color='black'/></Dollar>
+        </Row> )
       case 3:
-        console.log('bingo')
-        return ( <Row><Dollar>$</Dollar><Dollar>$</Dollar><Dollar>$</Dollar><Dollar color>$</Dollar></Row> )
+        return ( <Row>
+          <Dollar><Icon name='dollar sign' color='black'/></Dollar>
+          <Dollar><Icon name='dollar sign' color='black'/></Dollar>
+          <Dollar><Icon name='dollar sign' color='black'/></Dollar>
+          <Dollar><Icon name='dollar sign' color='light grey'/></Dollar>
+        </Row> )
       case 2:
-        return ( <Row><Dollar>$</Dollar><Dollar>$</Dollar><Dollar color>$</Dollar><Dollar color>$</Dollar></Row> )
+        return ( <Row>
+          <Dollar>$</Dollar>
+          <Dollar>$</Dollar>
+          <Dollar color>$</Dollar>
+          <Dollar color>$</Dollar>
+        </Row> )
       case 1:
-        return ( <Row><Dollar>$</Dollar><Dollar color>$</Dollar><Dollar color>$</Dollar><Dollar color>$</Dollar></Row> )
+        return ( <Row>
+          <Dollar>$</Dollar>
+          <Dollar color>$</Dollar>
+          <Dollar color>$</Dollar>
+          <Dollar color>$</Dollar>
+        </Row> )
     };
   };
 
   // updating urgency 
-  const updateUrgency = (status) => {
+  const updateUrgency = (event) => {
     // get new selection
-    setUrgency(status);
+    console.log('new urgency: ', event.target.value)
+    setUrgency(event.target.value);
   };
 
   const focusOnCalendar = () => {
@@ -126,39 +148,44 @@ const BusinessProfile = () => {
         height={{ height: "250px" }}
         alt="parallaximg"
         src={profilePic}
-        size={{ height: '30%', width: '16%', marginTop: '5%', left: '-65%' }}
+        size={{ height: '30%', width: '20%', marginTop: '5%', left: '-65%' }}
         title={businessName}
         text={businessDescription}
         headerStyle='20%'
       />
       <Row style={{ marginBottom: '5%' }}>
         <Container style={{width: '67%', marginLeft: '5%' }}>
-          <Row style={{ fontSize: '16px', marginBottom: '1.5%' }}>
+          <Row style={{ fontSize: '20px', marginBottom: '2.5%' }}>
             <SocialIcon network="facebook" style={{ marginRight: '1%', width: 23, height: 23, marginTop: '-0.2%' }}/>
-            {mutualFriends} of your Facebook friends and {totalFriends} people have liked Blades of Glory 
+            {mutualFriends} of your Facebook friends and {commaNumber(totalFriends)} people have liked Blades of Glory 
           </Row>
-          <Row style={{ marginBottom: '3%' }}>
+          <Row style={{ marginBottom: '5%' }}>
             <Row style={{ width: '60%' }}>
               {tags.map((tag) => <Tag>{tag}</Tag>)}
             </Row>
-            <Row style={{ width: '40%', marginLeft: '-15%' }}>
+            <Row style={{ width: '40%', marginLeft: '12%' }}>
               {renderDollarSigns()}
             </Row>
           </Row>
-            <Row style={{ fontSize: '16px', fontWeight: 'bold', marginBottom: '1%' }}>Works With</Row>
-            <Row style={{ fontSize: '13px', marginBottom: '1%' }}>See our recomended partners</Row>
-            <Row style={{ marginBottom: '3%' }}>{worksWith.map((pic) => <WorksWithPic src={pic.pic} />)}</Row>
-            <Row style={{ fontSize: '16px', fontWeight: 'bold', marginBottom: '1%' }}>About Us</Row>
-            <Row style={{ fontSize: '13px', marginBottom: '2%', width: '50%' }}>{about}</Row>
-            <Row>
+            <Row style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '1.5%' }}>Works With</Row>
+            <Row style={{ fontSize: '15px', marginBottom: '1.5%' }}>See our recomended partners</Row>
+            <Row style={{ marginBottom: '3.5%' }}>{worksWith.map((pic) => <WorksWithPic src={pic.pic} />)}</Row>
+            <Row style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '2%' }}>About Us</Row>
+            <Row style={{ fontSize: '15px', marginBottom: '3.5%', width: '65%' }}>{about}</Row>
+            <Row style={{ marginBottom: '4%' }}>
               <RoundPic src={contact.pic} />
-              <Container style={{ marginTop: '.5%' }}>
+              <Container style={{ marginTop: '1.2%' }}>
                 <BoldText>{contact.name}</BoldText>
                 <SmallText>{contact.title}</SmallText>
               </Container>
             </Row>
+            <Row style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '2%' }}>Location</Row>
+            <Row style={{ fontSize: '15px', color: '#999'}}>
+              <img src="https://img.icons8.com/material/24/000000/marker.png" style={{ height: '25px', width: '25px', marginRight: '0.25%', marginTop: '' }} />
+              <div style={{ marginTop: '0.25%' }}>{address}</div>
+            </Row>
         </Container>
-        <Container style={{ width: '33%' }}>
+        <Container style={{ width: '38%' }}>
           <Sidebar 
             score={score} 
             urgency={urgency} 
