@@ -1,4 +1,4 @@
-// packages
+// dependencies
 import React, { useState, useEffect } from 'react';
 import { connect  } from 'react-redux';
 import { SocialIcon } from 'react-social-icons';
@@ -7,7 +7,7 @@ import { Icon } from 'semantic-ui-react';
 
 // components
 import Sidebar from './subcomponents/Sidebar';
-// import Reviews from './subcomponents/Reviews';
+import Reviews from './subcomponents/Reviews';
 // import BusinessMapContainer from './subcomponents/BusinessMapContainer'
 import { Container, Row, Dollar, Tag, WorksWithPic, RoundPic, BoldText, SmallText } from './BusinessProfileStyles/index';
 import ParallaxBuis from './subcomponents/ParallaxBuis';
@@ -76,7 +76,7 @@ const BusinessProfile = () => {
     switch (price) {
       case 4: 
         return ( <Row>
-          <Dollar><Icon name='dollar sign' color='black'/></Dollar>
+          <Dollar><Icon name='dollar sign' color='#333f48'/></Dollar>
           <Dollar><Icon name='dollar sign' color='black'/></Dollar>
           <Dollar><Icon name='dollar sign' color='black'/></Dollar>
           <Dollar><Icon name='dollar sign' color='black'/></Dollar>
@@ -105,19 +105,49 @@ const BusinessProfile = () => {
     };
   };
 
+  // need reviews to be organized in tuple array since only render two reviews per row
+  const organizeReviews = (reviews) => {
+    const newReviews = [];
+    let tuple = [];
+    reviews.forEach((review) => {
+      tuple.push(review); 
+      if (tuple.length === 2) {
+        newReviews.push(tuple);
+        tuple = [];
+      }
+    });
+    
+    return newReviews;
+  };
+
+  // need pics to be in sets of 3 since they are displayed with 3 per row
+  const organizeInstaPics = (pics) => {
+    const newPics = [];
+    let triplet = [];
+    pics.forEach((pic) => {
+      triplet.push(pic); 
+      if (triplet.length === 3) {
+        newPics.push(triplet);
+        triplet = [];
+      }
+    });
+    
+    return newPics;
+  }
+
   // updating urgency 
   const updateUrgency = (event) => {
     // get new selection
     console.log('new urgency: ', event.target.value)
-    setUrgency(event.target.value);
+    // setUrgency(event.target.value);
   };
 
   const focusOnCalendar = () => {
-    setCalendarFocus(!calendarFocused);
+    // setCalendarFocus(!calendarFocused);
   }
   const updateStartDate = (date) => {
     console.log('Date Chosen: ', date)
-    setDate(date);
+    // setDate(date);
   };
 
   // Connection Request
@@ -125,7 +155,7 @@ const BusinessProfile = () => {
     // gather urgency, start date, any other info to go with the request
     // make whatever api request that will go with this
     console.log('request sent');
-    setReqStatus(true);
+    // setReqStatus(true);
   };
 
   // show whole review if part is cut off
@@ -153,7 +183,7 @@ const BusinessProfile = () => {
         text={businessDescription}
         headerStyle='20%'
       />
-      <Row style={{ marginBottom: '5%' }}>
+      <Row style={{ marginBottom: '5%', marginTop: '-15%' }}>
         <Container style={{width: '67%', marginLeft: '5%' }}>
           <Row style={{ fontSize: '20px', marginBottom: '2.5%' }}>
             <SocialIcon network="facebook" style={{ marginRight: '1%', width: 23, height: 23, marginTop: '-0.2%' }}/>
@@ -180,7 +210,7 @@ const BusinessProfile = () => {
               </Container>
             </Row>
             <Row style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '2%' }}>Location</Row>
-            <Row style={{ fontSize: '15px', color: '#999'}}>
+            <Row style={{ fontSize: '15px', color: '#999', marginBottom: '2%' }}>
               <img src="https://img.icons8.com/material/24/000000/marker.png" style={{ height: '25px', width: '25px', marginRight: '0.25%', marginTop: '' }} />
               <div style={{ marginTop: '0.25%' }}>{address}</div>
             </Row>
@@ -189,7 +219,7 @@ const BusinessProfile = () => {
           <Sidebar 
             score={score} 
             urgency={urgency} 
-            instaPics={instaPic} 
+            instaPics={organizeInstaPics(instaPic)} 
             changeUrgency={updateUrgency} 
             sendRequest={sendRequest}
             getDate={updateStartDate}
@@ -199,7 +229,10 @@ const BusinessProfile = () => {
           />
         </Container>
       </Row>
-    
+      {/* Line here */}
+      <Container style={{ marginLeft: '5%' }}>
+        <Reviews reviews={organizeReviews(userReviews)} reviewCount={reviewCount} />
+      </Container>
     </div>
   )
 };

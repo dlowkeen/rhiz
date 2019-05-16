@@ -47,11 +47,11 @@ export const RoundPic = styled.img`
 export const BoldText = styled.div`
   font-size: 18px;
   font-weight: bold;
-  margin-bottom: 0.25%;
+  margin-bottom: 2.5%;
 `;
 
 export const SmallText = styled.div`
-  font-size: 11px;
+  font-size: 13px;
   color: #999;
 `;
 
@@ -78,5 +78,11 @@ export const Button = styled.button`
   margin: 4px 2px;
   cursor: pointer;
   width: 50%;
+`;
+
+export const InstaPic = styled.img`
+  height: 70px;
+  width: 70px;
+  margin-right: 3%;
 `;
 

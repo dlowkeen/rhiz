@@ -9,7 +9,6 @@ const ParallaxBuis = props => (
       bgImage={props.bgImage}
       bgImageAlt="profile pic"
       strength={200}
-
     >
       <Container>
         <Image src={props.src} style={props.size} centered />

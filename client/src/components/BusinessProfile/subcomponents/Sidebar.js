@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Calendar from 'react-datepicker';
 import 'react-dates/initialize';
 import { SingleDatePicker } from 'react-dates';
 
 
 // components
-import { Container, Row, Line, Button } from '../BusinessProfileStyles';
+import { Container, Row, Line, Button, InstaPic } from '../BusinessProfileStyles';
 
 const buttonStyle = {
   backgroundColor: '#FFF',
@@ -25,6 +25,7 @@ const Sidebar = (props) => {
   const { 
     score, instaPics, urgency, changeUrgency, sendRequest, date, getDate, focused, focusCalendar 
   } = props;
+  console.log('pics: ', instaPics)
   return (
     <Container>
       <Container style={{ marginBottom: '8%' }}>
@@ -54,7 +55,7 @@ const Sidebar = (props) => {
           id='your_unique_id' // PropTypes.string.isRequired,
         /> */}
         <Row style={{ fontSize: '14px', color: '#999', marginBottom: '1.5%' }}>URGENCY</Row>
-        <Container style={{ marginBottom: '2%'}}>
+        <Container style={{ marginBottom: '5%'}}>
           <form>
             <div className='radio' style={{ marginBottom: '1%' }}>
               <label>
@@ -88,7 +89,14 @@ const Sidebar = (props) => {
             </div>
           </form>
         </Container>
-        <Button>Connect</Button>
+        <Button onClick={sendRequest} style={{ marginBottom: '12%' }}>Connect</Button>
+        <Row style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '2.5%' }}>Instagram Feed</Row>
+        <Line style={{ marginBottom: '2.5%' }}/>
+        {instaPics.map((triplet) => {
+          return (<Row style={{ marginBottom: '5%' }}>
+              {triplet.map((pic) => <InstaPic src={pic.pic}/>)}
+            </Row>)
+        })}
       </Container>
     </ Container>
   )

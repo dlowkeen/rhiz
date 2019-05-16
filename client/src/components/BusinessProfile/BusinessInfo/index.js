@@ -59,7 +59,7 @@ export const reviews = [
     name: 'Tim Sanches',
     src: tim,
     review:
-      "Irure pariatur aute excepteur proident dolor. Pariatur aliqua tempor proident occaecat enim do minim. Deserunt ullamco cupidatat et proident quis cupidatat consequat reprehenderit Lorem fugiat aliquip. Culpa tempor laboris adipisicing sunt. Elit velit quis nulla anim tempor veniam aliquip ut nostrud eiusmod eiusmod velit tempor. Fugiat velit pariatur sint ex Lorem in minim non eiusmod amet deserunt cillum occaecat fugiat.",
+      "Great company to work with. Fred was attentive to my budget and design considerations. Found them on Rhiz and what a breeze the whole process was.",
     change: 5,
     datePosted: '2 weeks ago'
   },
@@ -67,7 +67,7 @@ export const reviews = [
     name: 'Shirley Washburn',
     src: shirley,
     review: 
-      '',
+      'I liked them. Had a small project done, though it was not cheap! May recommend to a friend.',
     datePosted: '1 month ago'
   }
 ];
