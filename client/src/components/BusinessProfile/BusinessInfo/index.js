@@ -18,6 +18,7 @@ import cait from '../images/reviews/Cait Smith.jpg';
 import kevin from '../images/reviews/Kevin Snyder.jpg';
 import shirley from '../images/reviews/Shirley Washburn.jpg';
 import tim from '../images/reviews/Tim Sanches.jpg';
+import owner from '../images/owner/Business Owner - Alessandra.jpg';
 
 export const business = {
   name: 'Blades of Glory Landscaping',
@@ -28,7 +29,8 @@ export const business = {
   rhizScore: 90,
   contact: {
     name: 'Daisy Buchanan',
-    title: 'Business Owner'
+    title: 'Business Owner',
+    pic: owner
   },
   address: '1351 3rd St., Santa Monica, 90291',
   reviewCount: 185,
