@@ -3,12 +3,12 @@ import React, { useState, useEffect } from 'react';
 import { connect  } from 'react-redux';
 import { SocialIcon } from 'react-social-icons';
 import commaNumber from 'comma-number';
-import { Icon } from 'semantic-ui-react';
+// import { Icon } from 'semantic-ui-react';
 
 // components
 import Sidebar from './subcomponents/Sidebar';
 import Reviews from './subcomponents/Reviews';
-// import BusinessMapContainer from './subcomponents/BusinessMapContainer'
+import BusinessMapContainer from './subcomponents/BusinessMapContainer';
 import { Container, Row, Dollar, Tag, WorksWithPic, RoundPic, BoldText, SmallText } from './BusinessProfileStyles/index';
 import ParallaxBuis from './subcomponents/ParallaxBuis';
 
@@ -76,64 +76,34 @@ const BusinessProfile = () => {
     switch (price) {
       case 4: 
         return ( <Row>
-          <Dollar><Icon name='dollar sign' color='#333f48'/></Dollar>
-          <Dollar><Icon name='dollar sign' color='black'/></Dollar>
-          <Dollar><Icon name='dollar sign' color='black'/></Dollar>
-          <Dollar><Icon name='dollar sign' color='black'/></Dollar>
+          <Dollar>$</Dollar>
+          <Dollar>$</Dollar>
+          <Dollar>$</Dollar>
+          <Dollar>$</Dollar>
         </Row> )
       case 3:
         return ( <Row>
-          <Dollar><Icon name='dollar sign' color='black'/></Dollar>
-          <Dollar><Icon name='dollar sign' color='black'/></Dollar>
-          <Dollar><Icon name='dollar sign' color='black'/></Dollar>
-          <Dollar><Icon name='dollar sign' color='light grey'/></Dollar>
+          <Dollar>$</Dollar>
+          <Dollar>$</Dollar>
+          <Dollar>$</Dollar>
+          <Dollar color="true">$</Dollar>
         </Row> )
       case 2:
         return ( <Row>
           <Dollar>$</Dollar>
           <Dollar>$</Dollar>
-          <Dollar color>$</Dollar>
-          <Dollar color>$</Dollar>
+          <Dollar color="true">$</Dollar>
+          <Dollar color="true">$</Dollar>
         </Row> )
       case 1:
         return ( <Row>
           <Dollar>$</Dollar>
-          <Dollar color>$</Dollar>
-          <Dollar color>$</Dollar>
-          <Dollar color>$</Dollar>
+          <Dollar color="true">$</Dollar>
+          <Dollar color="true">$</Dollar>
+          <Dollar color="true">$</Dollar>
         </Row> )
     };
   };
-
-  // need reviews to be organized in tuple array since only render two reviews per row
-  const organizeReviews = (reviews) => {
-    const newReviews = [];
-    let tuple = [];
-    reviews.forEach((review) => {
-      tuple.push(review); 
-      if (tuple.length === 2) {
-        newReviews.push(tuple);
-        tuple = [];
-      }
-    });
-    
-    return newReviews;
-  };
-
-  // need pics to be in sets of 3 since they are displayed with 3 per row
-  const organizeInstaPics = (pics) => {
-    const newPics = [];
-    let triplet = [];
-    pics.forEach((pic) => {
-      triplet.push(pic); 
-      if (triplet.length === 3) {
-        newPics.push(triplet);
-        triplet = [];
-      }
-    });
-    
-    return newPics;
-  }
 
   // updating urgency 
   const updateUrgency = (event) => {
@@ -191,15 +161,17 @@ const BusinessProfile = () => {
           </Row>
           <Row style={{ marginBottom: '5%' }}>
             <Row style={{ width: '60%' }}>
-              {tags.map((tag) => <Tag>{tag}</Tag>)}
+              {tags.map((tag, i) => <Tag key={i}>{tag}</Tag>)}
             </Row>
-            <Row style={{ width: '40%', marginLeft: '12%' }}>
+            <Row style={{ width: '40%', marginLeft: '-8%' }}>
               {renderDollarSigns()}
             </Row>
           </Row>
             <Row style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '1.5%' }}>Works With</Row>
             <Row style={{ fontSize: '15px', marginBottom: '1.5%' }}>See our recomended partners</Row>
-            <Row style={{ marginBottom: '3.5%' }}>{worksWith.map((pic) => <WorksWithPic src={pic.pic} />)}</Row>
+            <Row style={{ marginBottom: '3.5%', flexWrap: 'wrap' }}>
+              {workWith.map((pic, i) => <WorksWithPic src={pic.pic} key={i}/>)}
+            </Row>
             <Row style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '2%' }}>About Us</Row>
             <Row style={{ fontSize: '15px', marginBottom: '3.5%', width: '65%' }}>{about}</Row>
             <Row style={{ marginBottom: '4%' }}>
@@ -214,12 +186,13 @@ const BusinessProfile = () => {
               <img src="https://img.icons8.com/material/24/000000/marker.png" style={{ height: '25px', width: '25px', marginRight: '0.25%', marginTop: '' }} />
               <div style={{ marginTop: '0.25%' }}>{address}</div>
             </Row>
+            <BusinessMapContainer address={address} />
         </Container>
-        <Container style={{ width: '38%' }}>
+        <Container>
           <Sidebar 
             score={score} 
             urgency={urgency} 
-            instaPics={organizeInstaPics(instaPic)} 
+            instaPics={instaPic} 
             changeUrgency={updateUrgency} 
             sendRequest={sendRequest}
             getDate={updateStartDate}
@@ -231,7 +204,7 @@ const BusinessProfile = () => {
       </Row>
       {/* Line here */}
       <Container style={{ marginLeft: '5%' }}>
-        <Reviews reviews={organizeReviews(userReviews)} reviewCount={reviewCount} />
+        <Reviews reviews={userReviews} reviewCount={reviewCount} />
       </Container>
     </div>
   )

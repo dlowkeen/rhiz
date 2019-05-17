@@ -44,7 +44,7 @@ class Header extends Component {
           <Menu.Item>
             <div id="status" />
             <div
-              class="fb-login-button"
+              className="fb-login-button"
               data-width=""
               data-size="large"
               data-button-type="login_with"

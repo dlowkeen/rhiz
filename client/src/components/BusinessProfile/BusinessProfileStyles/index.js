@@ -35,6 +35,7 @@ export const WorksWithPic = styled.img`
   margin-right: 1.5%;
   height: 60px;
   width: 140px;
+  margin-top: 1%
 `;
 
 export const RoundPic = styled.img`
@@ -55,7 +56,7 @@ export const SmallText = styled.div`
   color: #999;
 `;
 
-export const Line = styled.hr`
+export const Line = styled.div`
   display: block;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
@@ -77,12 +78,13 @@ export const Button = styled.button`
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-  width: 50%;
+  width: 60%;
 `;
 
 export const InstaPic = styled.img`
   height: 70px;
   width: 70px;
-  margin-right: 3%;
+  margin-right: 8%;
+  margin-bottom: 5%;
 `;
 

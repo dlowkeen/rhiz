@@ -1,8 +1,9 @@
-require('dotenv').config()
+console.log('mapkey: ', process.env.REACT_APP_GOOGLE_APIKEY)
+
 module.exports = {
     googleClientID: process.env.GOOGLECLIENTID,
     googleClientSecret: process.env.GOOGLESECRET,
-    googleAPIKey: process.env.GOOGLEAPIKEY,
+    googleAPIKey: process.env.REACT_APP_GOOGLE_APIKEY,
     mongodbURI: process.env.MONGODB_URI,
     cookieKey: process.env.COOKIEKEY,
     linkedInClientID: process.env.LINKED_IN_CLIENT_ID,

@@ -7,33 +7,19 @@ import { SingleDatePicker } from 'react-dates';
 // components
 import { Container, Row, Line, Button, InstaPic } from '../BusinessProfileStyles';
 
-const buttonStyle = {
-  backgroundColor: '#FFF',
-  border: 'none',
-  color: 'white',
-  padding: '15px 32px',
-  textAlign: 'center',
-  textDecoration: 'none',
-  display: 'inline-block',
-  fontSize: '16px',
-  margin: '4px 2px',
-  cursor: 'pointer',
-  width: '50%'
-};
-
 const Sidebar = (props) => {
   const { 
-    score, instaPics, urgency, changeUrgency, sendRequest, date, getDate, focused, focusCalendar 
+    score, instaPics, urgency, changeUrgency, sendRequest, date, getDate, focused, focusCalendar
   } = props;
   console.log('pics: ', instaPics)
   return (
-    <Container>
-      <Container style={{ marginBottom: '8%' }}>
+    <Container style={{ width: '80%' }}>
+      <Container style={{ marginBottom: '30%' }}>
         <Row style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '2.25%' }}>Business Rating</Row>
         <Line />
         <Row style={{ fontSize: '20px', marginBottom: '2.25%' }}>
           Rhiz Score 
-          <Row style={{ marginLeft: '5%' }}><div style={{color: '#43b02a'}}>{score}</div>/10</Row>
+          <Row style={{ marginLeft: '5%' }}><div style={{color: '#43b02a'}}>{score}</div>/100</Row>
         </Row>
       </Container>
       <Container>
@@ -89,14 +75,12 @@ const Sidebar = (props) => {
             </div>
           </form>
         </Container>
-        <Button onClick={sendRequest} style={{ marginBottom: '12%' }}>Connect</Button>
+        <Button onClick={sendRequest} style={{ marginBottom: '40%' }}>Connect</Button>
         <Row style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '2.5%' }}>Instagram Feed</Row>
-        <Line style={{ marginBottom: '2.5%' }}/>
-        {instaPics.map((triplet) => {
-          return (<Row style={{ marginBottom: '5%' }}>
-              {triplet.map((pic) => <InstaPic src={pic.pic}/>)}
-            </Row>)
-        })}
+        <Line style={{ marginBottom: '1.5%' }}/>
+        <Row style={{ flexWrap: 'wrap', width: '80%' }}>
+          {instaPics.map((pic, i) => {return <InstaPic src={pic.pic} key={i} />})}
+        </Row>
       </Container>
     </ Container>
   )
