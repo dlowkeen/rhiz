@@ -6,7 +6,7 @@ Small business marketplace, powered by community.
  - https://whispering-savannah-73328.herokuapp.com/
 
 ## Built With
-* [React](https://reactjs.org/docs/hello-world.html) - Javascrupt Framework
+* [React](https://reactjs.org/docs/hello-world.html) - Javascript Framework
 * [Redux](https://redux.js.org/) - State Container
 * [Passport](http://www.passportjs.org/) - Oauth User Authentication
 * [Mlab](https://mlab.com/) - MongoDB Database Host

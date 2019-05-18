@@ -8,7 +8,7 @@ import { Z_ASCII } from 'zlib';
 
 const Reviews = (props) => {
   const {reviews, reviewCount } = props;
-  console.log('reviews: ', reviews)
+  
   return (
     <div>
       <Row style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '2.5%' }}>

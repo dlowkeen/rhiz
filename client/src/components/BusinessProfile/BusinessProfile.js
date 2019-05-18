@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { connect  } from 'react-redux';
 import { SocialIcon } from 'react-social-icons';
 import commaNumber from 'comma-number';
-// import { Icon } from 'semantic-ui-react';
+import { Icon } from 'semantic-ui-react';
 
 // components
 import Sidebar from './subcomponents/Sidebar';
@@ -76,40 +76,41 @@ const BusinessProfile = () => {
     switch (price) {
       case 4: 
         return ( <Row>
-          <Dollar>$</Dollar>
-          <Dollar>$</Dollar>
-          <Dollar>$</Dollar>
-          <Dollar>$</Dollar>
+          <Dollar><Icon name="dollar" /></Dollar>
+          <Dollar><Icon name="dollar" /></Dollar>
+          <Dollar><Icon name="dollar" /></Dollar>
+          <Dollar><Icon name="dollar" /></Dollar>
         </Row> )
       case 3:
         return ( <Row>
-          <Dollar>$</Dollar>
-          <Dollar>$</Dollar>
-          <Dollar>$</Dollar>
-          <Dollar color="true">$</Dollar>
+          <Dollar><Icon name="dollar" /></Dollar>
+          <Dollar><Icon name="dollar" /></Dollar>
+          <Dollar><Icon name="dollar" /></Dollar>
+          <Dollar><Icon name="dollar sign" /></Dollar>
         </Row> )
       case 2:
         return ( <Row>
-          <Dollar>$</Dollar>
-          <Dollar>$</Dollar>
-          <Dollar color="true">$</Dollar>
-          <Dollar color="true">$</Dollar>
+          <Dollar><Icon name="dollar" /></Dollar>
+          <Dollar><Icon name="dollar" /></Dollar>
+          <Dollar><Icon name="dollar sign" /></Dollar>
+          <Dollar><Icon name="dollar sign" /></Dollar>
         </Row> )
       case 1:
         return ( <Row>
-          <Dollar>$</Dollar>
-          <Dollar color="true">$</Dollar>
-          <Dollar color="true">$</Dollar>
-          <Dollar color="true">$</Dollar>
+          <Dollar><Icon name="dollar" /></Dollar>
+          <Dollar><Icon name="dollar sign" /></Dollar>
+          <Dollar><Icon name="dollar sign" /></Dollar>
+          <Dollar><Icon name="dollar sign" /></Dollar>
         </Row> )
     };
   };
+
 
   // updating urgency 
   const updateUrgency = (event) => {
     // get new selection
     console.log('new urgency: ', event.target.value)
-    // setUrgency(event.target.value);
+    setUrgency(event.target.value);
   };
 
   const focusOnCalendar = () => {
