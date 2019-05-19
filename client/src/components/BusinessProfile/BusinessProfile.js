@@ -142,9 +142,17 @@ const BusinessProfile = () => {
     <div>
       <ParallaxBuis
           bgImage={banner} 
-          height={{ height: "75px" }}
+          height={{ height: "10px", marginBottom: '5%' }}
           title={businessName}
           text={businessDescription}
+          src={profilePic}
+          size={{ 
+            height: '25%', 
+            width: '20%', 
+            left: '-65%', 
+            marginTop: '-4%',
+             
+          }}
           alt="parallaximg"
         />
       <Row style={{ marginBottom: '5%', marginTop: '-15%' }}>
