@@ -8,7 +8,6 @@ class BusinessMapContainer extends Component {
   alterAddress = (address) => {
     return address.split(', ').join(' ').split(' ').join('+');
   }
-
   render() {
     const address = this.alterAddress(this.props.address);
     // const key = "AIzaSyBJh2fJjftRp3_BWRLe3VBcURw0BH926U8" 

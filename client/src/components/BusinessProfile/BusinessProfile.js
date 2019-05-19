@@ -43,7 +43,6 @@ const BusinessProfile = () => {
   const [startDate, setDate] = useState(new Date());
   const [requestStatus, setReqStatus] = useState(false);
   const [visibleReviewCount, setVisReviewCount] = useState(4);
-  const [calendarFocused, setCalendarFocus] = useState(false);
 
   useEffect(() => {
     // get info and set state with it (will eventually be requesting for business info from db)
@@ -113,12 +112,9 @@ const BusinessProfile = () => {
     setUrgency(event.target.value);
   };
 
-  const focusOnCalendar = () => {
-    // setCalendarFocus(!calendarFocused);
-  }
   const updateStartDate = (date) => {
     console.log('Date Chosen: ', date)
-    // setDate(date);
+    setDate(date);
   };
 
   // Connection Request
@@ -145,15 +141,10 @@ const BusinessProfile = () => {
   return (
     <div>
       <ParallaxBuis
-        bgImage={banner} 
-        height={{ height: "250px" }}
-        alt="parallaximg"
-        src={profilePic}
-        size={{ height: '30%', width: '20%', marginTop: '5%', left: '-65%' }}
-        title={businessName}
-        text={businessDescription}
-        headerStyle='20%'
-      />
+          bgImage={banner} 
+          height={{ height: "75px" }}
+          alt="parallaximg"
+        />
       <Row style={{ marginBottom: '5%', marginTop: '-15%' }}>
         <Container style={{width: '67%', marginLeft: '5%' }}>
           <Row style={{ fontSize: '20px', marginBottom: '2.5%' }}>
@@ -198,8 +189,6 @@ const BusinessProfile = () => {
             sendRequest={sendRequest}
             getDate={updateStartDate}
             date={startDate}
-            focusCalendar={setCalendarFocus}
-            focused={calendarFocused}
           />
         </Container>
       </Row>

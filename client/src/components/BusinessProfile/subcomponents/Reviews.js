@@ -18,7 +18,7 @@ const Reviews = (props) => {
       <Container style={{ marginBottom: '10%' }}>
         <Row style={{flexWrap: 'wrap'}}>
           {reviews.map((review, i) => {
-            return <Container style={{ marginRight: '3%', width: '33%' }} key={i}>
+            return <Container style={{ marginRight: '3%', width: '33%', marginBottom: '2%' }} key={i}>
             <Row style={{ marginBottom: '3%' }}>
               <RoundPic src={review.src} style={{ marginRight: '3%' }}/>
               <Container style={{ marginTop: '2%' }}>

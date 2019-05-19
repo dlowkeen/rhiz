@@ -1,9 +1,9 @@
-console.log('mapkey: ', process.env.REACT_APP_GOOGLE_APIKEY)
+console.log('mapkey: ', process.env.REACT_APP_GOOGLE_API_KEY)
 
 module.exports = {
     googleClientID: process.env.GOOGLECLIENTID,
     googleClientSecret: process.env.GOOGLESECRET,
-    googleAPIKey: process.env.REACT_APP_GOOGLE_APIKEY,
+    googleAPIKey: process.env.REACT_APP_GOOGLE_API_KEY,
     mongodbURI: process.env.MONGODB_URI,
     cookieKey: process.env.COOKIEKEY,
     linkedInClientID: process.env.LINKED_IN_CLIENT_ID,

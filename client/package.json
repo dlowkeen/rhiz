@@ -8,8 +8,6 @@
     "comma-number": "^2.0.1",
     "moment": "^2.24.0",
     "react": "^16.8.1",
-    "react-datepicker": "^2.5.0",
-    "react-dates": "^20.2.0",
     "react-day-picker": "^7.3.0",
     "react-dom": "^16.8.1",
     "react-parallax": "^1.6.1",

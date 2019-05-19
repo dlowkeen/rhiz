@@ -1,7 +1,5 @@
+// dependencies
 import React from 'react';
-import DatePicker from 'react-datepicker';
-import 'react-dates/initialize';
-import { SingleDatePicker } from 'react-dates';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import 'react-day-picker/lib/style.css';
 
@@ -37,7 +35,7 @@ const Sidebar = (props) => {
                 <Row>
                   <input type='radio' value='Just Curious' style={{ marginRight: '1.5%'}}
                                 checked={urgency === 'Just Curious'} 
-                                onClick={changeUrgency} />
+                                onChange={changeUrgency} />
                   <div style={{ marginBottom: '1%', fontSize: '13px', fontWeight: 'bold' }}>Just Curious</div>
                 </Row>
               </label>
@@ -47,7 +45,7 @@ const Sidebar = (props) => {
                 <Row>
                   <input type='radio' value='Ready to Go' style={{ marginRight: '1.5%'}}
                                 checked={urgency === 'Ready to Go'} 
-                                onClick={changeUrgency} />
+                                onChange={changeUrgency} />
                   <div style={{ marginBottom: '1%', fontSize: '13px', fontWeight: 'bold' }}>Ready to Go</div>
                 </Row>
               </label>
@@ -57,7 +55,7 @@ const Sidebar = (props) => {
                 <Row>
                   <input type='radio' value='Emergency' style={{ marginRight: '1.5%'}}
                                 checked={urgency === 'Emergency'} 
-                                onClick={changeUrgency} />
+                                onChange={changeUrgency} />
                   <div style={{ marginBottom: '1%', fontSize: '13px', fontWeight: 'bold' }}>Emergency</div>
                 </Row>
               </label>
