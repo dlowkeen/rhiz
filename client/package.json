@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bcrypt": "^2.0.1",
+<<<<<<< HEAD
     "comma-number": "^2.0.1",
     "moment": "^2.24.0",
     "react": "^16.8.1",
@@ -14,11 +15,19 @@
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "react-scripts": "3.0.1",
+=======
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-parallax": "^1.8.0",
+    "react-redux": "^5.1.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^1.1.5",
+>>>>>>> 7f8b237527288f150185563590f57c63a457103f
     "react-slick": "^0.21.0",
     "redux": "^3.7.2",
-    "redux-form": "^7.3.0",
-    "redux-thunk": "^2.2.0",
-    "semantic-ui-css": "^2.3.0",
+    "redux-form": "^7.4.2",
+    "redux-thunk": "^2.3.0",
+    "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.78.3",
     "slick-carousel": "^1.8.1"
   },
