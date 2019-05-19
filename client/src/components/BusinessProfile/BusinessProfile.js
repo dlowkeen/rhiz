@@ -143,6 +143,8 @@ const BusinessProfile = () => {
       <ParallaxBuis
           bgImage={banner} 
           height={{ height: "75px" }}
+          title={businessName}
+          text={businessDescription}
           alt="parallaximg"
         />
       <Row style={{ marginBottom: '5%', marginTop: '-15%' }}>
