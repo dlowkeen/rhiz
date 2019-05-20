@@ -4,15 +4,14 @@ import commaNumber from 'comma-number';
 
 // components
 import { Container, Row, RoundPic, BoldText, SmallText } from '../BusinessProfileStyles';
-import { Z_ASCII } from 'zlib';
 
 const Reviews = (props) => {
   const {reviews, reviewCount } = props;
   
   return (
     <div>
-      <Row style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '2.5%' }}>
-        <div style={{ marginRight: '0.5%' }}>{commaNumber(reviewCount)}</div>
+      <Row style={{ fontSize: '23px', fontWeight: 'bold', marginBottom: '2.5%' }}>
+        <div style={{ marginRight: '0.5%', fontSize: '23px', fontWeight: 'bold' }}>{commaNumber(reviewCount)}</div>
         Reviews
       </Row>
       <Container style={{ marginBottom: '10%' }}>
@@ -26,7 +25,7 @@ const Reviews = (props) => {
                 <SmallText>{review.datePosted}</SmallText>
               </Container>
             </Row>
-            <div style={{ fontSize: '13px' }}>{review.review}</div>
+            <div style={{ fontSize: '17px' }}>{review.review}</div>
           </Container>
           })}
         </Row>

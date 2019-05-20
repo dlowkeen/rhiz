@@ -10,8 +10,7 @@ class BusinessMapContainer extends Component {
   }
   render() {
     const address = this.alterAddress(this.props.address);
-    // const key = "AIzaSyBJh2fJjftRp3_BWRLe3VBcURw0BH926U8" 
-    console.log('newkey: ', keys.googleAPIKey)
+    
     let googleUrl = `https://www.google.com/maps/embed/v1/place?key=${keys.googleAPIKey}&q=${address}`;
     return <div style={{ width: '75%' }}>
         <Embed active url={googleUrl} />

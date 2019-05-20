@@ -9,7 +9,9 @@ import { Icon } from 'semantic-ui-react';
 import Sidebar from './subcomponents/Sidebar';
 import Reviews from './subcomponents/Reviews';
 import BusinessMapContainer from './subcomponents/BusinessMapContainer';
-import { Container, Row, Dollar, Tag, WorksWithPic, RoundPic, BoldText, SmallText } from './BusinessProfileStyles/index';
+import { 
+  Container, Row, Dollar, Tag, WorksWithPic, RoundPic, BoldText, SmallText, Main 
+} from './BusinessProfileStyles/index';
 import ParallaxBuis from './subcomponents/ParallaxBuis';
 
 // assets
@@ -66,6 +68,7 @@ const BusinessProfile = () => {
     setReviews(reviews);
     setMutual(mutualFriends);
     setTotal(totalFriends);
+    console.log('name: ', businessName)
   });
 
   //methods
@@ -139,25 +142,17 @@ const BusinessProfile = () => {
   };
 
   return (
-    <div>
+    <Main style={{ width: '100%' }}>
       <ParallaxBuis
-          bgImage={banner} 
-          height={{ height: "10px", marginBottom: '5%' }}
+          bgImage={banner}
+          height={{ height: "100px" }}
           title={businessName}
           text={businessDescription}
-          src={profilePic}
-          size={{ 
-            height: '25%', 
-            width: '20%', 
-            left: '-65%', 
-            marginTop: '-4%',
-             
-          }}
           alt="parallaximg"
         />
-      <Row style={{ marginBottom: '5%', marginTop: '-15%' }}>
-        <Container style={{width: '67%', marginLeft: '5%' }}>
-          <Row style={{ fontSize: '20px', marginBottom: '2.5%' }}>
+      <Row style={{ marginBottom: '5%', marginTop: '8%' }}>
+        <Container style={{width: '67%', marginLeft: '5%'  }}>
+          <Row style={{ fontSize: '23px', marginBottom: '2.5%' }}>
             <SocialIcon network="facebook" style={{ marginRight: '1%', width: 23, height: 23, marginTop: '-0.2%' }}/>
             {mutualFriends} of your Facebook friends and {commaNumber(totalFriends)} people have liked Blades of Glory 
           </Row>
@@ -169,13 +164,13 @@ const BusinessProfile = () => {
               {renderDollarSigns()}
             </Row>
           </Row>
-            <Row style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '1.5%' }}>Works With</Row>
-            <Row style={{ fontSize: '15px', marginBottom: '1.5%' }}>See our recomended partners</Row>
+            <Row style={{ fontSize: '23px', fontWeight: 'bold', marginBottom: '1.5%' }}>Works With</Row>
+            <Row style={{ fontSize: '17px', marginBottom: '1.5%' }}>See our recomended partners</Row>
             <Row style={{ marginBottom: '3.5%', flexWrap: 'wrap' }}>
               {workWith.map((pic, i) => <WorksWithPic src={pic.pic} key={i}/>)}
             </Row>
-            <Row style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '2%' }}>About Us</Row>
-            <Row style={{ fontSize: '15px', marginBottom: '3.5%', width: '65%' }}>{about}</Row>
+            <Row style={{ fontSize: '23px', fontWeight: 'bold', marginBottom: '2%' }}>About Us</Row>
+            <Row style={{ fontSize: '17px', marginBottom: '3.5%', width: '65%' }}>{about}</Row>
             <Row style={{ marginBottom: '4%' }}>
               <RoundPic src={contact.pic} />
               <Container style={{ marginTop: '1.2%' }}>
@@ -183,10 +178,10 @@ const BusinessProfile = () => {
                 <SmallText>{contact.title}</SmallText>
               </Container>
             </Row>
-            <Row style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '2%' }}>Location</Row>
-            <Row style={{ fontSize: '15px', color: '#999', marginBottom: '2%' }}>
+            <Row style={{ fontSize: '23px', fontWeight: 'bold', marginBottom: '2%' }}>Location</Row>
+            <Row style={{ fontSize: '17px', color: '#999', marginBottom: '2%' }}>
               <img src="https://img.icons8.com/material/24/000000/marker.png" style={{ height: '25px', width: '25px', marginRight: '0.25%', marginTop: '' }} />
-              <div style={{ marginTop: '0.25%' }}>{address}</div>
+              <div style={{ marginTop: '0.25%', color: '#999' }}>{address}</div>
             </Row>
             <BusinessMapContainer address={address} />
         </Container>
@@ -206,11 +201,9 @@ const BusinessProfile = () => {
       <Container style={{ marginLeft: '5%' }}>
         <Reviews reviews={userReviews} reviewCount={reviewCount} />
       </Container>
-    </div>
+    </Main>
   )
 };
-
-
 
 export default BusinessProfile;
 

@@ -1,4 +1,4 @@
-import landscapeBannerPic from '../images/andres-iga-90533-unsplash.jpg';
+import landscapeBannerPic from '../images/Blades of Glory - Thumb.jpg';
 import busProfilePic from '../images/BoG.png';
 import with1 from '../images/worksWith/Works With 1.jpg';
 import with2 from '../images/worksWith/Works With 2.jpg';

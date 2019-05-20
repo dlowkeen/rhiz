@@ -8,6 +8,10 @@ export const Banner = styled.div`
   background-size: cover;
 `;
 
+export const Main = styled.div`
+  font-family: 'Karla', sans-serif;
+`;
+
 export const Row = styled.div`
   display: flex;
   flex-direction; row;
@@ -16,6 +20,7 @@ export const Row = styled.div`
 
 export const Dollar = styled.div`
   margin-right: 13%;
+  fontSize: 23px;
   color: ${props => props.color ? '#D3D3D3' : 'black'};
   font-weight: bold;
 `;
