@@ -1,20 +1,25 @@
 import React from "react";
 import { Card, Icon, Image, Button } from "semantic-ui-react";
 
+
+
 const VerticalCard = props => (
   <Card>
     <Image src={props.src} alt="img" />
     <Card.Content>
       <Card.Header>{props.name}</Card.Header>
-      <Card.Meta>{props.bio}</Card.Meta>
+      <Card.Meta>{props.location}</Card.Meta>
       <br />
+      <Card.Meta className="bio">{props.bio}</Card.Meta>
       <Card.Description>
-        {props.description}
-        <br />
-        {props.location}
+      - {props.firstSpecialty}
       </Card.Description>
-    </Card.Content>
-    <Card.Content extra>
+      <Card.Description>
+      - {props.secondSpecialty}
+      </Card.Description>
+      <Card.Description>
+      - {props.thirdSpecialty}
+      </Card.Description>
       <div>
         <div className="card-icons">
           <img
@@ -36,12 +41,15 @@ const VerticalCard = props => (
       </div>
       <div className="ui two buttons">
         <Button href={props.website} positive>
-          View
+          View Listing
         </Button>
       </div>
     </Card.Content>
   </Card>
+  
 );
+
+
 
 export default VerticalCard;
 

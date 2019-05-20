@@ -14,9 +14,9 @@ import Login from './register/login/Login';
 import Team from './team/Team';
 
 class Router extends Component {
-  componentDidMount() {
-    this.props.fetchUser();
-  }
+  // componentDidMount() {
+  //   this.props.fetchUser();
+  // }
 
   render() {
     return (

@@ -1,8 +1,70 @@
 .title {
+  text-align: center;
   margin-top: 15px;
   margin-bottom: 60px;
 }
 
-.home-statistics {
-  margin-top: 15px;
+.ui.secondary.menu.header{
+  margin-bottom: 0;
+  height: 5rem;
+}
+
+.ui.secondary.menu.header .text{
+  padding-right: 2rem;
+}
+
+.ui.dropdown.header.login {
+  position: relative;
+  top:.5rem;
+  right: 4rem;
+  font-size: 1.2rem;
+  color:  #333f48;
+}
+.bell.outline.icon {
+  /* color: rgba(255, 255, 255, .2); */
+  position: relative;
+  top: 1.7rem;
+  right: 5rem;
+}
+.home-search-bar {
+  padding: .3rem;
+  background:rgba(255, 255, 255, .2);
+  margin-top: 5rem;
+  display: inline-block;
+}
+
+.ui.input.search-input-query>input, .ui.input.search-input-query>button {
+  border-radius: 0px;
+}
+
+.ui.input.search-input-query>input::-webkit-input-placeholder {
+  color: black;
+}
+.map.marker.alternate.icon{
+  color: black;
+}
+
+.ui.icon.button.label.search.button{
+  border-radius: 0px 3px 3px 0px;
+  background-color:  #43b02a;
+  width: 6rem;
+  color: white;
+}
+
+div .ui.card .meta.bio {
+  
+  color:  #43b02a;
+}
+
+h2.viewAllLink {
+  padding: 2rem;
+  color: #43b02a;
+  /* display: inline-block; */
+}
+div.listingsHeader{
+  text-align: center
+}
+div.listingsHeader>* {
+  display: inline-block;
+  text-align: center
 }

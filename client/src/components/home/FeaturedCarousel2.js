@@ -1,5 +1,4 @@
 import React from "react";
-import Slider from "react-slick";
 import { Container } from "semantic-ui-react";
 import VerticalCard from "../common/VerticalCard";
 // import featuredInteriorDesign from "../../constants/featuredInteriorDesign";
@@ -50,18 +49,9 @@ class FeaturedCarousel2 extends React.Component {
   }
 
   render() {
-    var settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      nextArrow: <SamplePrevArrow />,
-      prevArrow: <SampleNextArrow />,
-      slidesToShow: 3,
-      slidesToScroll: 1
-    };
     return (
       <Container>
-        <Slider {...settings}>{this.renderVerticalCards()}</Slider>
+      {this.renderVerticalCards()}
       </Container>
     );
   }

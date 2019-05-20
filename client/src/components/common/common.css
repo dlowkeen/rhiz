@@ -1,5 +1,10 @@
+
+
 html {
   box-sizing: border-box;
+}
+body {
+  font-family: 'Karla', sans-serif;
 }
 *,
 *:before,
@@ -47,8 +52,10 @@ a.email:hover {
   margin-bottom:15px
 }
 
-.rhiz-header-logo {
+/* .rhiz-header-logo {
   height: 38px;
   width: 70px;
   margin-bottom: -10px;
-}
+} */
+
+
