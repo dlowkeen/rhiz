@@ -10,7 +10,7 @@ import Sidebar from './subcomponents/Sidebar';
 import Reviews from './subcomponents/Reviews';
 import BusinessMapContainer from './subcomponents/BusinessMapContainer';
 import { 
-  Container, Row, Dollar, Tag, WorksWithPic, RoundPic, BoldText, SmallText, Main 
+  Container, Row, Dollar, Tag, WorksWithPic, RoundPic, BoldText, SmallText, Main, ProfilePic 
 } from './BusinessProfileStyles/index';
 import ParallaxBuis from './subcomponents/ParallaxBuis';
 
@@ -146,12 +146,15 @@ const BusinessProfile = () => {
       <ParallaxBuis
           bgImage={banner}
           height={{ height: "100px" }}
+          bgImageSizes={20}
           title={businessName}
           text={businessDescription}
           alt="parallaximg"
-        />
+          heigth={{ height: '25px' }}
+      />
+      <ProfilePic src={profilePic}/>      
       <Row style={{ marginBottom: '5%', marginTop: '8%' }}>
-        <Container style={{width: '67%', marginLeft: '5%'  }}>
+        <Container style={{ marginLeft: '5%'  }}>
           <Row style={{ fontSize: '23px', marginBottom: '2.5%' }}>
             <SocialIcon network="facebook" style={{ marginRight: '1%', width: 23, height: 23, marginTop: '-0.2%' }}/>
             {mutualFriends} of your Facebook friends and {commaNumber(totalFriends)} people have liked Blades of Glory 
@@ -170,7 +173,7 @@ const BusinessProfile = () => {
               {workWith.map((pic, i) => <WorksWithPic src={pic.pic} key={i}/>)}
             </Row>
             <Row style={{ fontSize: '23px', fontWeight: 'bold', marginBottom: '2%' }}>About Us</Row>
-            <Row style={{ fontSize: '17px', marginBottom: '3.5%', width: '65%' }}>{about}</Row>
+            <Row style={{ fontSize: '20px', marginBottom: '3.5%', width: '65%' }}>{about}</Row>
             <Row style={{ marginBottom: '4%' }}>
               <RoundPic src={contact.pic} />
               <Container style={{ marginTop: '1.2%' }}>
@@ -179,9 +182,9 @@ const BusinessProfile = () => {
               </Container>
             </Row>
             <Row style={{ fontSize: '23px', fontWeight: 'bold', marginBottom: '2%' }}>Location</Row>
-            <Row style={{ fontSize: '17px', color: '#999', marginBottom: '2%' }}>
+            <Row style={{ marginBottom: '2%' }}>
               <img src="https://img.icons8.com/material/24/000000/marker.png" style={{ height: '25px', width: '25px', marginRight: '0.25%', marginTop: '' }} />
-              <div style={{ marginTop: '0.25%', color: '#999' }}>{address}</div>
+              <div style={{ marginTop: '0.25%', color: '#999', fontSize: '20px' }}>{address}</div>
             </Row>
             <BusinessMapContainer address={address} />
         </Container>

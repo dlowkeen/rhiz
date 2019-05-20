@@ -12,6 +12,13 @@ export const Main = styled.div`
   font-family: 'Karla', sans-serif;
 `;
 
+export const ProfilePic = styled.img`
+  height: '10px';
+  width: '8px';
+  margin-left: 5%;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+`;
+
 export const Row = styled.div`
   display: flex;
   flex-direction; row;
