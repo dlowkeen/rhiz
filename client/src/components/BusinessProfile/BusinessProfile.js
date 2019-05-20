@@ -154,7 +154,7 @@ const BusinessProfile = () => {
       />
       <ProfilePic src={profilePic}/>      
       <Row style={{ marginBottom: '5%', marginTop: '8%' }}>
-        <Container style={{ marginLeft: '5%'  }}>
+        <Container style={{ marginLeft: '5%', width: '67%'  }}>
           <Row style={{ fontSize: '23px', marginBottom: '2.5%' }}>
             <SocialIcon network="facebook" style={{ marginRight: '1%', width: 23, height: 23, marginTop: '-0.2%' }}/>
             {mutualFriends} of your Facebook friends and {commaNumber(totalFriends)} people have liked Blades of Glory 
