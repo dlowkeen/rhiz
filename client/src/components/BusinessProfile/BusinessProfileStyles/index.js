@@ -22,7 +22,8 @@ export const ProfilePic = styled.img`
 export const Row = styled.div`
   display: flex;
   flex-direction; row;
-  font-size: 18px
+  font-size: 18px;
+  font-family: 'Karla', sans-serif;
 `;
 
 export const Dollar = styled.div`
@@ -35,19 +36,21 @@ export const Dollar = styled.div`
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  font-family: 'Karla', sans-serif;
 `;
 
 export const Tag = styled.div`
   font-size: 20px;
   color: #43b02a;
   margin-right: 3%;
+  font-family: 'Karla', sans-serif;
 `;
 
 export const WorksWithPic = styled.img`
   margin-right: 1.5%;
   height: 60px;
   width: 140px;
-  margin-top: 1%
+  margin-top: 1%;
 `;
 
 export const RoundPic = styled.img`
@@ -61,11 +64,13 @@ export const BoldText = styled.div`
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 2.5%;
+  font-family: 'Karla', sans-serif;
 `;
 
 export const SmallText = styled.div`
   font-size: 13px;
   color: #999;
+  font-family: 'Karla', sans-serif;
 `;
 
 export const Line = styled.div`
@@ -91,6 +96,7 @@ export const Button = styled.button`
   margin: 4px 2px;
   cursor: pointer;
   width: 60%;
+  font-family: 'Karla', sans-serif;
 `;
 
 export const InstaPic = styled.img`
