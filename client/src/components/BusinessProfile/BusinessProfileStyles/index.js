@@ -1,0 +1,108 @@
+import styled from 'styled-components';
+
+export const Banner = styled.div`
+  background-image: ${props => `url(${props.src})`};
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+`;
+
+export const Main = styled.div`
+  font-family: 'Karla', sans-serif;
+`;
+
+export const ProfilePic = styled.img`
+  height: '10px';
+  width: '8px';
+  margin-left: 5%;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+`;
+
+export const Row = styled.div`
+  display: flex;
+  flex-direction; row;
+  font-size: 18px;
+  font-family: 'Karla', sans-serif;
+`;
+
+export const Dollar = styled.div`
+  margin-right: 13%;
+  fontSize: 23px;
+  color: ${props => props.color ? '#D3D3D3' : 'black'};
+  font-weight: bold;
+`;
+
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  font-family: 'Karla', sans-serif;
+`;
+
+export const Tag = styled.div`
+  font-size: 20px;
+  color: #43b02a;
+  margin-right: 3%;
+  font-family: 'Karla', sans-serif;
+`;
+
+export const WorksWithPic = styled.img`
+  margin-right: 1.5%;
+  height: 60px;
+  width: 140px;
+  margin-top: 1%;
+`;
+
+export const RoundPic = styled.img`
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  margin-right: 1.7%;
+`;
+
+export const BoldText = styled.div`
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 2.5%;
+  font-family: 'Karla', sans-serif;
+`;
+
+export const SmallText = styled.div`
+  font-size: 13px;
+  color: #999;
+  font-family: 'Karla', sans-serif;
+`;
+
+export const Line = styled.div`
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+  color: black;
+`;
+
+export const Button = styled.button`
+  background-color: #43b02a;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 60%;
+  font-family: 'Karla', sans-serif;
+`;
+
+export const InstaPic = styled.img`
+  height: 70px;
+  width: 70px;
+  margin-right: 8%;
+  margin-bottom: 5%;
+`;
+

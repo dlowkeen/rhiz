@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Container } from "semantic-ui-react";
 import ParallaxConsumer from "./ParallaxConsumer";
+import Reviews from "../BusinessProfile/subcomponents/Reviews";
 import HorizontalCard from "../common/HorizontalCard";
 import hero1 from "../../assets/images/consumerProfile/hero.jpg";
 import ale from "../../assets/images/consumerProfile/alessandra.jpg";
@@ -12,6 +13,8 @@ import fav5 from "../../assets/images/bizThumbs/binfordThumb.jpg";
 import consumer from "../../assets/images/consumerProfile/alessandra.jpf";
 import escapeRegExp from "escape-string-regexp";
 import "./consumerProfile.css";
+
+import { reviews } from './Reviews';
 
 class ConsumerProfile extends Component {
   state = {
@@ -89,20 +92,8 @@ class ConsumerProfile extends Component {
 
             {/* ** INSERT HORIZONTAL CARD w Business.js details ** */}
 
-            <div class="sixteen wide column">
-              <h2 className="title">61 Reviews</h2>
-            </div>
-            <div class="ui four column grid">
-              <div class="row">
-                <div class="column">
-                  <h3> From Consumers (57)</h3>
-                </div>
-                <div class="column">
-                  <h3 class="green"> From Businesses (4)</h3>
-                </div>
-              </div>
-            </div>
-
+            {/* Added this div below for where business card will go so could add the margin */}
+            <div className="business card" style={{ marginBottom: "4%" }}></div>
             {/*
               <div class="ui three column grid">
                 <div class="row">
@@ -126,14 +117,50 @@ class ConsumerProfile extends Component {
 
 
 
-            <div class="row">
+            {/* <div class="row">
               <div class="column">
                 <button class="ui-button">Load More</button>
               </div>
-            </div>
+            </div> */}
           </div>
 
         </Container>
+        {/* <div style={{
+          display: "flex",
+          flexDirection: "column",
+          fontFamily: "Karla, sans-serif",
+          marginTop: "5%",
+          alignContent: "center"
+        }}> */}
+          {/* <div class="sixteen wide column">
+                <h2 className="title">61 Reviews</h2>
+              </div> */}
+          <Container>
+
+          <Reviews 
+            reviews={reviews}
+            reviewCount={61}
+          >
+            <div class="ui four column grid" style={{ marginBottom: "3%" }}>
+              <div class="row">
+                <div class="column">
+                  <h3> From Consumers (57)</h3>
+                </div>
+                <div class="column">
+                  <h3 class="green"> From Businesses (4)</h3>
+                </div>
+              </div>
+            </div>
+          </Reviews>
+          <div class="row">
+            <div class="column">
+              <button class="ui-button">Load More</button>
+            </div>
+          </div>
+          </Container>
+        {/* </div> */}
+         
+
       </div>
     );
   }

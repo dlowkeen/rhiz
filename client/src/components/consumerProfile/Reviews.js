@@ -1,4 +1,4 @@
-export default [
+export const reviews = [
   {
     name: "Cool Breeze Dopeness",
     src: require("../../assets/images/bizThumbs/coolBreezeThumb.jpg"),
@@ -9,7 +9,7 @@ export default [
   },
   {
     name: "Believe It Or Knot",
-    src: require("../../assets/images/bizThumbs/coolBreezeThumb.jpg"),
+    src: require("../../assets/images/consumerProfile/reviews/Believe It Or Knot.jpg"),
     review:
       "Alessandra's eye for design helped speed up my process. She's fast to respond to messages, too.",
     change: 23,
@@ -17,15 +17,15 @@ export default [
   },
   {
     name: "Garden of Eva",
-    src: require("../../assets/images/bizThumbs/coolBreezeThumb.jpg"),
+    src: require("../../assets/images/bizThumbs/gardenEvaThumb.jpg"),
     review:
-      "Alessandra has a nice yard and grat ideas, we're grateful for the job.",
+      "Alessandra has a great eye for design, we're grateful to be partners.",
     change: 5,
     datePosted: "2 weeks ago"
   },
   {
     name: "AwesomeSauce",
-    src: require("../../assets/images/bizThumbs/coolBreezeThumb.jpg"),
+    src: require("../../assets/images/consumerProfile/reviews/AwesomeSauce.jpg"),
     review:
       "The McClanes were a great catering client. Let me know if you need more help!",
     change: 5,
