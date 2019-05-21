@@ -41,12 +41,8 @@ class Home extends Component {
     // Destructure the state values
     // use spread to prevent mutations
     let { featuredLandscaping, featuredInteriorDesign, searchFor } = this.state;
-    const match = new RegExp(escapeRegExp(searchFor), "i");
-    searchFor
-      ? (featuredLandscaping = featuredLandscaping.filter(fls =>
-          match.test(fls.name)
-        ))
-      : featuredLandscaping;
+    const match =  new RegExp(escapeRegExp(searchFor), 'i');
+    featuredLandscaping = searchFor ? featuredLandscaping.filter((fls) => match.test(fls.name)) : featuredLandscaping
     return (
       <div>
         <ParallaxImage
