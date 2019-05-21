@@ -17,9 +17,9 @@ import ConsumerProfile from './consumerProfile/ConsumerProfile';
 
 
 class Router extends Component {
-  componentDidMount() {
-    this.props.fetchUser();
-  }
+  // componentDidMount() {
+  //   this.props.fetchUser();
+  // }
 
   render() {
     return (

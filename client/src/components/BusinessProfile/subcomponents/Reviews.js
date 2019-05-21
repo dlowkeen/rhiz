@@ -14,6 +14,9 @@ const Reviews = (props) => {
         <div style={{ marginRight: '0.5%', fontSize: '23px', fontWeight: 'bold' }}>{commaNumber(reviewCount)}</div>
         Reviews
       </Row>
+      <Container>
+        {props.children}
+      </Container>
       <Container style={{ marginBottom: '10%' }}>
         <Row style={{flexWrap: 'wrap'}}>
           {reviews.map((review, i) => {

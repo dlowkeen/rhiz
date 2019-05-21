@@ -1,5 +1,4 @@
 import React from "react";
-import Slider from "react-slick";
 import { Container } from "semantic-ui-react";
 import VerticalCard from '../common/VerticalCard';
 // import featuredLandscaping from '../../constants/featuredLandscaping';
@@ -40,6 +39,9 @@ class FeaturedCarousel extends React.Component {
             src={featuredLandscaping.src}
             location={featuredLandscaping.location}
             description={featuredLandscaping.description}
+            firstSpecialty={featuredLandscaping.firstSpecialty}
+            secondSpecialty={featuredLandscaping.secondSpecialty}
+            thirdSpecialty={featuredLandscaping.thirdSpecialty}
             facebook={featuredLandscaping.facebook}
             instagram={featuredLandscaping.instagram}
             pricing={featuredLandscaping.pricing}
@@ -52,19 +54,8 @@ class FeaturedCarousel extends React.Component {
   }
 
   render() {
-    var settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      nextArrow: <SamplePrevArrow />,
-      prevArrow: <SampleNextArrow />,
-      slidesToShow: 3,
-      slidesToScroll: 1
-    };
     return <Container>
-        <Slider {...settings}>
           {this.renderVerticalCards()}
-        </Slider>
       </Container>;
   }
 }
