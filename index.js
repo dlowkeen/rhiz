@@ -1,12 +1,17 @@
 const express = require('express');
 const cookieSession = require('cookie-session');
+const cors = require('cors');
 const passport = require("passport");
+const path = require("path");
 const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
 const keys = require('./config/keys');
 const PORT = process.env.PORT || 3000;
 const app = express();
 
+const { router } = require('./routes');
+
+app.use(cors());
 app.use(bodyParser.json());
 
 // Wire up cookies for login.
@@ -22,18 +27,19 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Set up frontend file serving
-app.use('/', express.static('client/build'));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, './client/build')));
 
 //TODO(jcarter): I would add some error handling here.
-mongoose.connect(keys.mongodbURI);
+// mongoose.connect(keys.mongodbURI);
 
 //TODO(jcarter): I would move CRUD with the DB into the services, and inject schemas there.
-require('./models/User');
+// require('./models/User');
 
-require('./services/googlePassport');
-require('./services/linkedinPassport');
-require('./services/facebookPassport');
-require('./services/localPassport');
+// require('./services/googlePassport');
+// require('./services/linkedinPassport');
+// require('./services/facebookPassport');
+// require('./services/localPassport');
 
 // Run this express heroku production.
 if (process.env.NODE_ENV === "production") {
@@ -43,11 +49,11 @@ if (process.env.NODE_ENV === "production") {
 } else {
   //TODO(jcarter): Add else for env === dev
   console.log("Dev Environment");
-  require('./routes')(app);
+  app.use('/api', router);
 }
 
 // express will serve up index.html file if it doesn't recognize route
-const path = require("path");
+
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
 });

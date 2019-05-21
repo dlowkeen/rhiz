@@ -1,7 +1,9 @@
+require('dotenv').config();
+
 module.exports = {
     googleClientID: process.env.GOOGLECLIENTID,
     googleClientSecret: process.env.GOOGLESECRET,
-    googleAPIKey: process.env.GOOGLEAPIKEY,
+    googleAPIKey: process.env.GOOGLE_MAPS_API_KEY,
     mongodbURI: process.env.MONGODB_URI,
     cookieKey: process.env.COOKIEKEY,
     linkedInClientID: process.env.LINKED_IN_CLIENT_ID,
