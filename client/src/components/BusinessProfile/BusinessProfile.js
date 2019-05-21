@@ -148,12 +148,13 @@ const BusinessProfile = () => {
           bgImageSizes={20}
           title={businessName}
           text={businessDescription}
+          src={profilePic}
           alt="parallaximg"
           heigth={{ height: '25px' }}
       />
-      <ProfilePic src={profilePic}/>      
-      <Row style={{ marginBottom: '5%', marginTop: '8%' }}>
+      <Row style={{ marginBottom: '5%' }}>
         <Container style={{ marginLeft: '5%', width: '67%'  }}>
+        {/* <img src={profilePic} style={{ height: '10%', width: '17%', marginBottom: '6%', marginTop: '-20%', boxShadow: '0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)' }}/>       */}
           <Row style={{ fontSize: '23px', marginBottom: '2.5%' }}>
             <SocialIcon network="facebook" style={{ marginRight: '1%', width: 23, height: 23, marginTop: '-0.2%' }}/>
             {mutualFriends} of your Facebook friends and {commaNumber(totalFriends)} people have liked Blades of Glory 
