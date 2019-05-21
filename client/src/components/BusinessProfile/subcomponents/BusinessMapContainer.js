@@ -4,6 +4,15 @@ import keys from '../../../config-client/keys';
 import { ConsoleReporter } from "jasmine";
 
 class BusinessMapContainer extends Component {
+  state = {
+    mapKey: ''
+  }
+
+  // get map apikey
+  componentDidMount = () => {
+    
+  }
+
   //need address in format of 'address+city+state+zip'
   alterAddress = (address) => {
     return address.split(', ').join(' ').split(' ').join('+');

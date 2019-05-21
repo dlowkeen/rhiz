@@ -68,7 +68,6 @@ const BusinessProfile = () => {
     setReviews(reviews);
     setMutual(mutualFriends);
     setTotal(totalFriends);
-    console.log('name: ', businessName)
   });
 
   //methods
