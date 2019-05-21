@@ -70,7 +70,7 @@ class Home extends Component {
           <FeaturedCarousel featuredLandscaping={featuredLandscaping} />
           <div className="listingsHeader">
             <h1 className="title">Featured Interior Design Listings</h1>
-            <a href="/">
+            <a href="_self">
               <h2 className="view-all-link">View All</h2>
             </a>
           </div>
