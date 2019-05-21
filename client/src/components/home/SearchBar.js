@@ -8,13 +8,13 @@ class SearchBar extends Component {
       <div>
         <div className="home-search-bar">
           <Input
-            className="search-input-query"
+            className="search-input-term"
             placeholder="Sustainable Landscaping"
             value={searchFor}
             onChange={event => updateSearchFor(event.target.value)}
           />
           <Input
-            className="search-input-query"
+            className="search-input-urgency"
             placeholder="Ready To Go"
             label={
             <Button icon>
@@ -23,7 +23,7 @@ class SearchBar extends Component {
           labelPosition='right'
           />
           <Input
-            className="search-input-query"
+            className="search-input-location"
             placeholder="90291"
             label={
             <Button icon className="search button">

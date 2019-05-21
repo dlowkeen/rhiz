@@ -68,11 +68,16 @@ class Home extends Component {
           <div className="listingsHeader">
             <h1 className="title">Featured Landscaping Listings</h1>
             <a href="/">
-              <h2 className="viewAllLink">View All</h2>
+              <h2 className="view-all-link">View All</h2>
             </a>
           </div>
           <FeaturedCarousel featuredLandscaping={featuredLandscaping} />
-          <h1 className="title">Featured Interior Design Listings</h1>
+          <div className="listingsHeader">
+            <h1 className="title">Featured Interior Design Listings</h1>
+            <a href="/">
+              <h2 className="view-all-link">View All</h2>
+            </a>
+          </div>
           <FeaturedCarousel2 featuredInteriorDesign={featuredInteriorDesign} />
         </Container>
       </div>

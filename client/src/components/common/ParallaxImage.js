@@ -11,7 +11,7 @@ const ParallaxImage = props => (
     >
       <Container>
         <Image src={props.src} size={props.size} centered />
-        <h1 style={{ textAlign: 'center', paddingTop: '20px' }}>{props.title}</h1>
+        <h1 className="homepage-title">{props.title}</h1>
         <div style={{ textAlign: 'center' }}>{ props.search }</div>
         <div style={ props.height } />
       </Container>

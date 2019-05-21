@@ -15,13 +15,12 @@
 
 .ui.dropdown.header.login {
   position: relative;
-  top:.5rem;
+  top:.6rem;
   right: 4rem;
   font-size: 1.2rem;
   color:  #333f48;
 }
 .bell.outline.icon {
-  /* color: rgba(255, 255, 255, .2); */
   position: relative;
   top: 1.7rem;
   right: 5rem;
@@ -33,7 +32,12 @@
   display: inline-block;
 }
 
-.ui.input.search-input-query>input, .ui.input.search-input-query>button {
+.ui.input.search-input-term>input {
+  border-radius: 3px 0px 0px 3px;
+}
+.ui.input.search-input-urgency>input,
+.ui.input.search-input-urgency>input+button,
+.ui.input.search-input-location>input  {
   border-radius: 0px;
 }
 
@@ -56,7 +60,7 @@ div .ui.card .meta.bio {
   color:  #43b02a;
 }
 
-h2.viewAllLink {
+h2.view-all-link {
   padding: 2rem;
   color: #43b02a;
   /* display: inline-block; */
@@ -67,4 +71,12 @@ div.listingsHeader{
 div.listingsHeader>* {
   display: inline-block;
   text-align: center
+}
+h1.homepage-title{
+  color: White;
+  text-align: center;
+  padding-top: 20px;
+}
+img.rhiz-header-logo {
+  margin-left: 4rem;
 }
